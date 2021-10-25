@@ -259,9 +259,9 @@ for input_path in args.files:
             #     points = [d.points[0][0], d.points[0][1], d.points[1][0], d.points[1][1]]
             #     plot_one_box(points, frame, label=convert_id_to_class(d.data), color=colors(d.data, True), line_thickness=3)
 
-            # for to in tracked_objects:
-            #         new_tracked_objects.append(New_tracked_object(identity=to.id, id=to.last_detection.data))
-            # norfair.draw_tracked_objects(frame, new_tracked_objects)
+            #for to in tracked_objects:
+            #        new_tracked_objects.append(New_tracked_object(identity=to.id, id=to.last_detection.data))
+            norfair.draw_tracked_objects(frame, new_tracked_objects)
             video.write(frame)
         i += 1
 counters = {0: 0, 1: 0, 2: 0}
