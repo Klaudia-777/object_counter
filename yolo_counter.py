@@ -229,10 +229,10 @@ for input_path in args.files:
             tracked_objects = tracker.update(detections=detections)
             for d in detections:
                 detected_classes.add(d.data)
-            # if args.track_points == 'centroid':
-            #     # norfair.draw_points(frame, detections)
-            # elif args.track_points == 'bbox':
-            #     # norfair.draw_boxes(frame, detections, line_width=3)
+            if args.track_points == 'centroid':
+                norfair.draw_points(frame, detections)
+            elif args.track_points == 'bbox':
+                norfair.draw_boxes(frame, detections, line_width=3)
             if len(tracked_objects) > 0:
                 detectedIds = map(lambda x: x.id, detected_objects)
                 for tracked_object in tracked_objects:
